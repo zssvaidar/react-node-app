@@ -4,21 +4,19 @@ const Post = db.post;
 const User = db.user;
 const Op = db.Sequelize.Op;
 
-let name = 'nice';
-let username = 'nice';
-let email = 'nice';
-let phone = 'nice';
-let website = 'nice';
-let address = 'nice';
-
-
-User.create({  name: `${name}`,
-    username: `${username}`,
-    email: `${email}`,
-    phone: `${phone}`,
-    website: `${website}`,
-    address: `${address}`,
-})
+// let name = 'nice';
+// let username = 'nice';
+// let email = 'nice';
+// let phone = 'nice';
+// let website = 'nice';
+// let address = 'nice';
+// User.create({  name: `${name}`,
+//     username: `${username}`,
+//     email: `${email}`,
+//     phone: `${phone}`,
+//     website: `${website}`,
+//     address: `${address}`,
+// })
     
 // Create and Save a new User
 exports.create = (req, res) => {
@@ -56,10 +54,11 @@ exports.create = (req, res) => {
 
 // Retrieve all Posts from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+  // const title = req.query.title;
+  // var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
-  Post.findAll({ where: condition })
+  // Post.findAll({ where: condition })
+  Post.findAll()
     .then(data => {
       res.send(data);
     })

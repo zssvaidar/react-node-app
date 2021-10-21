@@ -2,7 +2,7 @@
 //   Sql
 //     users
 //     |
-//     user {name, email, phone, website, address}
+//     user {name, username, email, phone, website, address}
 //     |   \
 //     |    \
 //     |     \ 
