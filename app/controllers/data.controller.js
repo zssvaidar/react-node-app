@@ -10,13 +10,38 @@ const Op = db.Sequelize.Op;
 
 exports.usersData = async (req, res) => {
 
-    let results = await User.findAll({
-        include: [{
-            model: Post
-        },{
-            model: Album
-        }]
-    })
+    let results = {
+        users: await User.findAll({
+            include: [{
+                model: Post,
+                include: [{
+                    model:Comment,
+                    include: User
+                }
+            ]},{
+                model: Album
+            }]
+        }),
+        posts: await Post.findAll({
+            include: [{
+                model: User
+            }, {
+                model: Comment    
+            }]
+        }),
+        comments: await Comment.findAll({
+            include: [{
+                model: Post,
+                include: User
+            }]
+        }),
+        albums: await Album.findAll({
+            include: [{
+                model: User
+            }]
+        }),
+    }
+
     // res.send(data);
     res.send(results)
 }
