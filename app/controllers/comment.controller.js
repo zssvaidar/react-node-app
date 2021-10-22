@@ -48,8 +48,8 @@ exports.create = async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         text: req.body.text,
-        postId: req.body.id,
-        userID: req.body.userId,
+        postId: req.body.postId,
+        userID: req.body.userID,
     };
 
   // Save User in the database
