@@ -29,6 +29,7 @@ exports.create = async (req, res) => {
         phone: req.body.phone,
         website: req.body.website,
         address: req.body.address,
+        role: req.body.role,
     };
 
   // Save User in the database
