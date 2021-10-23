@@ -59,14 +59,15 @@ exports.login = async (req, res) => {
    User.findOne({ where: { username: username } })
       .then(function (users) {
         if (!users) {
-            res.status(401).send({ message: 'Incorrect username.' })
+          res.status(401)
+            res.send({ message: 'Incorrect username.' })
             return;
               // return done(null, false, { message: 'Incorrect username.' });
           }
           // if (!users.password === password) {
-          if (!'123' === password) {
-            res.status(402).send({ message: 'Incorrect password.' })
-
+          if (123 != password) {
+            res.status(402)
+            res.send({ message: 'Incorrect password.' })
             return;
               // return done(null, false, { message: 'Incorrect password.' });
           }
