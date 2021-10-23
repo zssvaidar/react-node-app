@@ -36,6 +36,8 @@ require("./app/routes/comment.routes")(app);
 require("./app/routes/album.routes")(app);
 
 // set port, listen for requests
+const dotenv = require('dotenv');
+dotenv.config();
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
