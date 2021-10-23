@@ -66,7 +66,7 @@ exports.login = async (req, res) => {
           }
           // if (!users.password === password) {
           if (!'123' === password) {
-            res.status(401)
+            res.status(402)
             res.send({ message: 'Incorrect password.' })
 
             return;
