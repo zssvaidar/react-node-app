@@ -170,92 +170,92 @@ exports.populate = async (req, res) => {
     var albums = [{
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-474-Big-Star-1-Record.jpg?w=1000',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-492-Bonnie-Raitt-Nick-of-Time.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-491-harry-styles-fine-line.jpg?w=800'],
-        description: '',
+        description: '20+ Piano Improvisations',
         userId: 1
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-467-Maxwell-Black-Summers-Night.jpg?w=1000',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-490-Linda-Ronstadt-Heart-Like-a-Wheel.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-489-Phil-Spector-Various-Artists-Back-to-Mono.jpg?w=800'],
-        description: '',
+        description: 'Utopian Ashes',
         userId: 1,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-496-Shakira-Donde-Estan-los-Ladrones.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-488-The-Stooges-The-Stooges.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-461-Bon-Iver-For-Emma.jpg?w=800'],
-        description: '',
+        description: 'Angel or Alien',
         userId: 1,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-495-Boyz-II-Men-II.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-463-Laura-Nyro-Eli-The-13th-Confession.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-462-Flying-Burrito-Brothers-The-Gilded-Palace-of-Sin.jpg?w=800'],
-        description: '',
+        description: 'Deja',
         userId: 1,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-494-THE-RONETTEs-Presenting-the-Fabulous-Ronettes.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-465-King-Sunny-Ade-Best-of-the-Classic-Years.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-464-Isley-Brothers-3x3-1.jpg?w=800'],
-        description: '',
+        description: 'Tell Me About Tomorrow',
         userId: 1,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-468-The-Rolling-Stones-Some-Girls.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-466-Beach-Boys-Today.jpg?w=800'],
-        description: '',
+        description: 'Get Up Sequences Part One',
         userId: 1,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-472-SZA-Ctrl.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-467-Maxwell-Black-Summers-Night.jpg?w=800'],
-        description: '',
+        description: 'Pink Noise',
         userId: 1,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-471-Jefferson-Airplane-Surrealistic-Pillow.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-470-Juvenile-400-Degreez.jpg?w=800'],
-        description: '',
+        description: 'Turn Over',
         userId: 2,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-477-Howlin-Wolf-Moanin-in-the-Moonlight.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-469-Manu-Chao-Clandestino.jpg?w=800'],
-        description: '',
+        description: 'Windy',
         userId: 2,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-476-Kimono-My-House.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-475-sheryl-crow-sheryl-crow.jpg?w=800'],
-        description: '',
+        description: 'Nocturnal Hours',
         userId: 2,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-474-Big-Star-1-Record.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-473-Daddy-Yankee-Barrio-Fino.jpg?w=800'],
-        description: '',
+        description: 'Lucy & Aaron',
         userId: 2,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-486-john-mayer-continuum-x.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-472-SZA-Ctrl.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-471-Jefferson-Airplane-Surrealistic-Pillow.jpg?w=800'],
-        description: '',
+        description: 'Seize the Power',
         userId: 3,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-485-Richard-and-Linda-Thompson-I-Want-to-See-the-bright-lights-tonight.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-496-Shakira-Donde-Estan-los-Ladrones.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-495-Boyz-II-Men-II.jpg?w=800'],
-        description: '',
+        description: 'Muvaland Vol. 2',
         userId: 3,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-500-Arcade-Fire-Funeral.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-494-THE-RONETTEs-Presenting-the-Fabulous-Ronettes.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-493-Marvin-Gaye-Here-My-Dear.jpg?w=800'],
-        description: '',
+        description: 'Scenes from Inside',
         userId: 3,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-499-Ask-Rufus-Rufus-Chaka-Khan.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-498-Suicide-Suicide.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-497-Indestructible-Beat-of-Soweto.jpg?w=800'],
-        description: '',
+        description: 'Chloe Flower',
         userId: 4,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-454-Can-Ege-Bamyasi.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-453-Nine-Inch-Nails-Pretty-Hate-Machine.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-452-Diana-Ross-and-the-Supremes-Anthology.jpg?w=800'],
-        description: '',
+        description: 'Influences',
         userId: 4,
     }, {
-        picture: '',
+        picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-498-Suicide-Suicide.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-458-Jason-Isbell-Southeastern.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-451-Roberta-Flack-First-Take.jpg?w=800'],
-        description: '',
+        description: 'Faith',
         userId: 4,
     }, {
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-457-Sinead-OConnor-I-Do-Now-Want-What-I-Havent-Got.jpg?w=800',
         pictures: ['https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-456-Al-Green-Greatest-Hits.jpg?w=800', 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-455-Bo-diddley-Bo-Diddley-AND-Go-Bo-Diddley.jpg?w=800'],
-        description: '',
+        description: 'Solid Gold U-Roy',
         userId: 4,
     }]
 
