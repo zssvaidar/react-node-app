@@ -12,7 +12,7 @@ module.exports = app => {
     router.post("/login", users.login);
     
     
-    router.get("/:uuid", users.userData);
+    router.get("/:id", users.userData);
     
     
     app.use('/api/users', router);

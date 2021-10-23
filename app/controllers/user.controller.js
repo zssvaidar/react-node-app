@@ -4,6 +4,7 @@ const Post = db.post;
 const User = db.user;
 const Album = db.album;
 const Comment = db.comment;
+const Usercomment = db.usercomment;
 const Op = db.Sequelize.Op;
 
 exports.users = async (req, res) => {
@@ -85,22 +86,33 @@ exports.login = async (req, res) => {
 
 exports.userData = async (req, res) => {
     
-    const uuid = req.params.uuid;
+    const id = req.params.id;
     
     let results = await User.findOne({
+    
         where: {
-            uuid: uuid
+            id: id
         },
         include: [{
             model: Post
         },{
             model: Album
-        },{
-          model: Comment
-        },
+        }
         
         ]
     })
+  
+
+ 
+      // results.dataValues.comments = await Comment.findAll({
+      results.dataValues.comments = await Comment.findAll({
+        raw: true,
+        where: {
+            userID: id
+        },
+      })
+  
+
     // res.send(data);
     res.send(results)
 }

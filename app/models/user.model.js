@@ -33,12 +33,13 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: true
         }
+             
     }, {sequelize, modelName: 'user'});
     
     User.associate = (models) => {
         User.hasMany(models.post, { foreignKey: 'userId' })
         User.hasMany(models.album, { foreignKey: 'userId' })
-        User.belongsToMany(models.comment, {through: models.usercomment, foreignKey: 'useriD'})
+        User.belongsToMany(models.comment, {through: models.usercomment, foreignKey: 'userID'})
     }
 
 
