@@ -45,6 +45,40 @@ exports.create = async (req, res) => {
     });
 }
 
+exports.login = async (req, res) => {
+  // Validate request
+  if (!req.body.username && !req.body.password) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+    return;
+  }
+  var username = req.body.username;
+  var password = req.body.password;
+  
+   User.findOne({ where: { username: username } })
+      .then(function (users) {
+        if (!users) {
+            res.status(401)
+            res.send({ message: 'Incorrect username.' })
+              // return done(null, false, { message: 'Incorrect username.' });
+          }
+          // if (!users.password === password) {
+          if (!'123' === password) {
+            res.status(401)
+            res.send({ message: 'Incorrect password.' })
+              // return done(null, false, { message: 'Incorrect password.' });
+          }
+          res.send(users)
+      }).catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while login-in"
+      });
+    });
+
+}
+
 exports.userData = async (req, res) => {
     
     const uuid = req.params.uuid;

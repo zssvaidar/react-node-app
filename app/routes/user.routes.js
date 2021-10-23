@@ -9,6 +9,8 @@ module.exports = app => {
     
     router.post("/", users.create);
 
+    router.post("/login", users.login);
+    
     
     router.get("/:uuid", users.userData);
     
