@@ -85,7 +85,7 @@ exports.userData = async (req, res) => {
     
     const uuid = req.params.uuid;
     
-    let results = await User.findAll({
+    let results = await User.findOne({
         where: {
             uuid: uuid
         },
