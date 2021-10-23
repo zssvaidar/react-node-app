@@ -3,6 +3,7 @@ const db = require("../models");
 const Post = db.post;
 const User = db.user;
 const Album = db.album;
+const Comment = db.comment;
 const Op = db.Sequelize.Op;
 
 exports.users = async (req, res) => {
@@ -94,7 +95,11 @@ exports.userData = async (req, res) => {
             model: Post
         },{
             model: Album
-        }]
+        },{
+          model: Comment
+        },
+        
+        ]
     })
     // res.send(data);
     res.send(results)
