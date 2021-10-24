@@ -1,6 +1,7 @@
 const { sequelize } = require("../models");
 const db = require("../models");
 const Post = db.post;
+const Comment = db.comment;
 const User = db.user;
 const Op = db.Sequelize.Op;
 
@@ -58,7 +59,11 @@ exports.findAll = (req, res) => {
   // var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
   // Post.findAll({ where: condition })
-  Post.findAll()
+  Post.findAll({
+    include: [{
+        model: Comment
+    }]
+  })
     .then(data => {
       res.send(data);
     })
@@ -74,7 +79,12 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Post.findByPk(id)
+  Post.findOne({
+    where: { id: id },
+     include: [{
+        model: Comment
+     }]
+  })
     .then(data => {
       if (data) {
         res.send(data);
