@@ -48,6 +48,19 @@ exports.usersData = async (req, res) => {
 
 exports.populate = async (req, res) => {
     
+    var populate = (Model, list) => list.forEach( async element =>
+        await Model.create(element)
+        .then( data => {
+            // res.send(data)
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                err.message || "Some error occurred while creating the User."
+            });
+        })
+    )
+
     var users = [{
         name: 'Reagan',
         username: 'ritchie.katlynn', 
@@ -77,12 +90,15 @@ exports.populate = async (req, res) => {
         website:'https://howe.com/ab-dolores-distinctio-esse-voluptatum-eligendi-rerum.html',
         address:'30910 Dominique RunYolandabury, IA 31567-8737',
     }]
-    
+    populate(User, users)
+    var users = await User.findAll({ raw: true })
+
+
     var posts = [{
         title: 'Drone search widens for dogs trapped by La Palma eruption',
         contents: 'Drone operators on the Canary island of La Palma have launched a high-stakes effort to search for and retrieve at least four dogs who have been stranded for weeks by the continuing volcanic eruption.',
         published: true,
-        userId:1,
+        userId: 1,
     }, {
         title: 'South Korea launches its first homemade space rocket',
         contents: 'South Korea’s first domestically produced space rocket reached its desired altitude but failed to deliver a dummy payload into orbit in its first test launch.',
@@ -110,7 +126,13 @@ exports.populate = async (req, res) => {
         userId:3,
     }
     ]
-
+    posts.map((e) => {
+        e['userId'] = users[e['userId'] - 1]['id']
+    })
+    populate(Post, posts)
+    posts = await Post.findAll({ raw: true })
+    
+    
     var comments = [{
         name: 'Reagan',
         text: 'To be on the right side of history, we should all, men and women alike, stand on the side of the she-devils.',
@@ -166,6 +188,12 @@ exports.populate = async (req, res) => {
         postId: 5,
         userID: 4,
     }]
+    comments.map((e) => {
+        e['postId'] = posts[e['postId']]['id']
+        e['userID'] = users[e['userID']-1]['id']
+    })
+    populate(Comment, comments)
+ 
 
     var albums = [{
         picture: 'https://www.rollingstone.com/wp-content/uploads/2020/09/R1344-474-Big-Star-1-Record.jpg?w=1000',
@@ -258,25 +286,11 @@ exports.populate = async (req, res) => {
         description: 'Solid Gold U-Roy',
         userId: 4,
     }]
-
-    var populate = (Model, list) => list.forEach( element =>
-        Model.create(element)
-            .then( data => {
-                // res.send(data)
-            })
-            .catch(err => {
-                res.status(500).send({
-                    message:
-                    err.message || "Some error occurred while creating the User."
-                });
-            })
-    )
-
-    populate(User, users)
-    populate(Post, posts)
-    populate(Comment, comments)
+    albums.map((e) => {
+        e['userId'] = users[e['userId']-1]['id']
+    })
     populate(Album, albums)
-   
+
     let results = {
         users: await User.findAll({
             include: [{

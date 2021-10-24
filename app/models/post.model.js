@@ -1,5 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
   const Post = sequelize.define("post", {
+    id: {
+        allowNull: false,
+        primaryKey: true,
+            type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
+    },
     uuid: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
@@ -16,7 +22,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.BOOLEAN
     },
     userId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
     }
 

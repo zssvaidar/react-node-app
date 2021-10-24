@@ -2,6 +2,12 @@ module.exports = (sequelize, Sequelize) => {
     
     var User = require('./user.model.js')
   const Comment = sequelize.define("comment", {
+        id: {
+            allowNull: false,
+            primaryKey: true,
+                type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4
+        },  
         uuid: {
             type: Sequelize.UUID,
             defaultValue: Sequelize.UUIDV4
@@ -19,11 +25,11 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false
         },
         postId: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.UUID,
             allowNull: false,
         },
         userID: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.UUID,
             allowNull: false,
             // references: {
             //     model: 'user',
