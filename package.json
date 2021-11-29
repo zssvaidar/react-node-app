@@ -4,7 +4,8 @@
   "description": "Node.js Rest Apis with Express, Sequelize & MySQL",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [
     "nodejs",
@@ -23,7 +24,6 @@
     "express": "^4.17.1",
     "mysql2": "^2.0.2",
     "sequelize": "^5.21.2",
-    "sqlite3": "^5.0.2",
-    "uuid": "^8.3.2"
+    "sqlite3": "^5.0.2"
   }
 }
